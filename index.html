@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"> </script>
+    <script src="canvas.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#dokumentasjon").hide();
+            $("#knapp1").click(function(){
+                $("#dokumentasjon").toggle();
+                $("#kunstner").hide();
+                $("#kilder").hide();
+
+            });
+
+        });
+
+        $(document).ready(function(){
+            $("#kunstner").hide();
+            $("#knapp2").click(function(){
+                $("#kunstner").toggle();
+                $("#kilder").hide();
+                $("#dokumentasjon").hide();
+
+            });
+        });
+
+        $(document).ready(function(){
+            $("#kilder").hide();
+            $("#knapp3").click(function(){
+                $("#kilder").toggle();
+                $("#kunstner").hide();
+                $("#dokumentasjon").hide();
+
+
+            });
+        });
+
+    </script>
+    <meta charset="UTF-8">
+
+
+
+</head>
+<body>
+<div class="main">
+
+
+
+
+<div class="header">
+    <h1>Verdensrommet!</h1>
+</div>
+
+
+
+
+
+<div class="container">
+    <div class ="imagecontainer">
+
+        <canvas id = "drawing" width="600" height="500" ></canvas>
+    </div>
+
+
+    <div class="imagecontainer">
+
+
+        <svg width="600" height= "500">
+
+            <g id="spaceship">
+                <rect x="250", y="400", width="40" , height="60" style="fill:brown"></rect>
+                <polygon points="250,400 270,370 290,400 250,400" style="fill: black"></polygon>
+                <polygon points="250,460 260,490 270,475 280,490 290,460" style="fill:orange"></polygon>
+                <circle r="7" cx="270" cy="415" style="fill:black"></circle>
+                <circle r="7" cx="270" cy="440" style="fill:black"></circle>
+
+            </g>
+
+
+            <polygon id= "starb" points="100,10 40,198 190,78 10,78 160,198" style="fill:#002F51;" />
+            <polygon id="stary" points="100,10 40,198 190,78 10,78 160,198" style="fill:#FFE721;" />
+
+
+            <circle id="sun" r="100" cx="500" cy="200" stroke="yellow" fill="yellow" />
+            
+            <circle id="moon" r="100" cx="500" cy="200" stroke="white" fill="white" />
+            <circle id="blueball" r="100" cx="540" cy="200" fill="#233947";/>
+
+
+        <line id="line1"  x1="375" y1="200" x2="300" y2 ="200" stroke="yellow" display="none"></line>
+        <line id="line2" x1 ="500" y1="75" x2="500" y2="0" stroke="yellow" display="none"></line>
+        <line id="line3" x1="500" y1="325" x2="500" y2="400" stroke="yellow" display="none"></line>
+        <line id="line4" x1="400" y1="300" x2="350" y2="350" stroke="yellow" display="none"></line>
+        <line id="line5" x1="400" y1="110" x2="350" y2="50" stroke="yellow" display="none"></line>
+
+
+            <circle id = "greenBall" cx="50" cy="350" r="50" stroke="#95B56A" stroke-width="4" fill="#95B56A" />
+
+
+
+
+            <animate
+                    xlink:href="#greenBall"
+                    attributeName="cx"
+                    from="50"
+                    to="550"
+                    dur="8.8"
+
+                    values="50; 550; 50"
+                    repeatCount="indefinite"
+
+                    id="circ-anim"/>
+
+
+
+        </svg>
+        <script>
+            $(document).ready(function(){
+                $("#moon").click(function (){
+                    $("#moon").hide()
+                    $("#stary").hide()
+                    $("#blueball").hide()
+                    $("#sun").show()
+                    $("#starb").show()
+                    $("#line1").show()
+                    $("#line2").show()
+                    $("#line3").show()
+                    $("#line4").show()
+                    $("#line5").show();
+
+
+                });
+                $("#sun").click(function (){
+                    $("#sun").hide()
+                    $("#stary").show()
+                    $("#starb").hide()
+
+                    $("#blueball").show()
+                    $("#moon").show()
+
+                    $("#line1").hide()
+                    $("#line2").hide()
+                    $("#line3").hide()
+                    $("#line4").hide()
+                    $("#line5").hide();
+
+                });
+
+            });
+
+
+        </script>
+
+        <script>
+            $(document).ready(function(){
+                $("#stary").click(function (){
+                    $("#stary").hide()
+                    $("#starb").show()
+                    $("#sun").show()
+                    $("#line1").show();
+                    $("#line2").show();
+                    $("#line3").show();
+                    $("#line4").show();
+                    $("#line5").show();
+                    $("#blueball").hide()
+                    $("#moon").hide();
+
+                });
+
+                $("#starb").click(function (){
+                    $("#starb").hide()
+                    $("#stary").show()
+                    $("#sun").hide()
+                    $("#line1").hide();
+                    $("#line2").hide();
+                    $("#line3").hide();
+                    $("#line4").hide();
+                    $("#line5").hide();
+                    $("#blueball").show()
+                    $("#moon").show();
+
+                });
+
+
+            });
+
+        </script>
+
+
+
+</div>
+
+</div>
+
+<div class="dokumentasjon">
+
+    <div class="menu">
+        <div>
+            <input type="button" id="knapp1" value="Dokumentasjon"></input>
+
+        </div>
+        <div>
+            <input type="button" id="knapp2" value="Kunstneren"></input>
+
+        </div>
+        <div>
+            <input type="button" id="knapp3" value="Kilder"></input>
+
+        </div>
+    </div>
+<div class="tekst">
+    <div id="dokumentasjon" style="padding-bottom: 20px">
+
+        <h4>Bruk av HTML5 Canvas og SVG</h4>
+        <p>
+
+            Jeg begynte først å lage et utkast med et par elementer og animasjon i HTML Canvas. Det viste seg å bli en utfordring å lage det samme i SVG og jeg ble dermed nødt til å forenkle animasjonen slik at bildene ble så like som mulig. Lenger ut i prosjektet erfarte jeg hva som er mulig å få til i både Canvas og SVG. Det gjorde det lettere å se for seg hva som var mulig å oppnå og forestille seg produktet.
+
+            For å lage månen plasserte jeg to sirkler som overlappet hverandre der den høyre sirkelen fikk lik farge som bakgrunnen, mens den til venstre er hvit for å illustrere månen.
+
+            Sirkelanimasjonen skal forestille jordkloden i bevegelse. I Canvas blir sirkelen tegnet på nytt flere ganger, der x-posisjonen endres kontinuerlig, og den «forrige» sirkelen fjernes ved bruk av clearRect. Jeg sjekker også sirkelens posisjon og endrer fortegn av x-posisjon når sirkelen treffer enden på Canvaset, som medfører motsatt rettet bevegelse. Samsvarende skjer i SVG ved å bruke animate<>. Verdiene i values får sirkelen til å gå fram og tilbake. Gjentagende oppførsel av sirkelens bevegelse får jeg ved å sette repeatCount på indefinite.
+
+            I Canvaset har jeg ganske lik logikk for romskipet som for sirkelens bevegelse, men her bruker jeg i tillegg jQuery for å oppdage når musen er over Canvaset. Funksjonen animate() kaller på clearRect og tegner alle elementene igjen. Videre oppdateres y posisjonen til romskipet. For å få animasjonene til å endres ved klikking og hover har jeg brukt jQuery og if-setninger i kombinasjon.
+
+            For å få animasjonen med romskipet til å fungere i SVG, brukte jeg CSS og Keyframes, hvor hele tegningen, som bestod av flere elementer, ble lagt i en group. Jeg fikk dermed til å flytte hele romskipet som en enhet.
+
+        </p>
+        <h4>Bruk av Flexbox</h4>
+        <p>
+            Etter å ha lest meg opp på både Flexbox og Grid, valgte jeg å bruke Flexbox siden Flexbox egnet seg bedre til mindre, komplekse prosjekter. Jeg så derfor ikke behovet for å bruke Grid da min nettside ikke krevde avansert plassering vertikalt og horisontalt av de ulike elementene.
+
+            Flexbox ga meg gode verktøy til å organisere de ulike elementene ved nettsiden. Ved bruk av en Flex-container rundt alle elementene, inkludert den innebygde funksjonen Flexwrap, blir siden responsiv når nettleservinduets størrelse endrer seg. Jeg har også en egen Flexbox rundt Canvas- og SVG elementene mine, som gjorde at jeg fikk ordnet dem vertikalt slik jeg ville.
+
+        </p>
+        <h4>Bruk av jQuery</h4>
+        <p>
+            For å få SVG-elementene mine til å skifte farge eller forsvinne/vises brukte jeg jQuery. Ved å bruke de innebygde funksjonene hide()/show() fikk jeg skiftet figur for hvert klikk på en av de elementene. Til menyen nederst brukte jeg jQuery for å få knappene til å bli interaktiv.
+
+            For å oppdage når musen hovret over Canvaset eller når Canvaset blir klikket på brukte jeg jQuery sine funksjoner ‘onmoseover’, ‘onmouseout’ og ‘onclick’. Dette gjorde det mye lettere, i tillegg at det ble renere å kode animasjon ved brukeraktivitet.  jQuery forenklet scriptet mitt og gjorde det lett og få ulik brukerinteraksjon. jQuery fungerer også likt i de aller fleste weblesere og er derfor en fordel å bruke.
+
+        </p>
+        <h4>Cross-browser testing</h4>
+        <p>
+            Underveis i prosessen åpnet jeg html-filen i Firefox og Google Chrome for å teste om siden fungerte som forventet. Ved å interagere som en bruker, sjekket jeg om all animasjon fungerte som den skulle også om den var identisk i de to browserne. For å sjekke om siden tilpasset seg vinduet endret jeg størrelse på fanen i tillegg til å bruke mobile view. Jeg  inspiserte også siden for å sjekke feilmeldinger i consolen og sjekke layouten.        </p>
+
+        </div>
+    <div id="kunstner" style="padding-bottom: 20px">
+
+        <h4>Spazio</h4>
+        <p>Kunsternen går under pseudonavnet Spazio, som er verdensrommet på italiensk.
+    H*n er en teknologisk kunstner som lar seg inspirere av verdensrommets store mysterier. H*ns meste kjente verk er 'Verdensrommet'. Dette var h*ns
+    første kunstverk. Typsik for spazio er bilder tydelig preget av det store universet, som man kan se i blant annet dette verket her.
+        </p>
+    </div>
+    <div id="kilder" style="padding-bottom: 20px">
+        <ul>
+            <li><a href="https://www.w3schools.com/graphics/svg_intro.asp">w3school om SVG</a></li>
+            <li><a href="youtube.com/watch?v=EO6OkltgudE&list=PLpPnRKq7eNW3We9VdCfx9fprhqXHwTPXL">HTML5 Canvas Tutorial for Beginners, ep1</a></li>
+            <li><a href="https://www.youtube.com/watch?v=83L6B13ixQ0&list=PLpPnRKq7eNW3We9VdCfx9fprhqXHwTPXL&index=2">HTML5 Canvas Tutorial for Beginners, ep2</a></li>
+            <li><a href="https://www.youtube.com/watch?v=yq2au9EfeRQ&list=PLpPnRKq7eNW3We9VdCfx9fprhqXHwTPXL&index=3">HTML5 Canvas Tutorial for Beginners, ep3</a></li>
+            <li><a href="https://www.tutorialspoint.com/How-to-draw-a-star-by-using-canvas-HTML5">How to draw a star by using html5 canvas</a> </li>
+            <li><a href="https://www.youtube.com/watch?v=hMxGhHNOkCU">jQuery Tutorial</a> </li>
+            <li><a href="https://css-tricks.com/guide-svg-animations-smil/?fbclid=IwAR2JEGYeJbxbZXpCi7cDgMLO3x2DzuR7O65s6Ah0Gj36s62XqkV-601fJ5o">A Guide to SVG Animations</a></li>
+            <li><a href="https://www.w3schools.com/jquery/">w3School om jQuery</a> </li>
+            <li><a href="https://www.w3schools.com/html/html5_canvas.asp">w3School om HTML5 Canvas</a> </li>
+            <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">a guide to flexbox</a> </li>
+            <li><a href="https://www.w3schools.com/css/css3_flexbox.asp">w3School om CSS Flexbox</a></li>
+            <li><a href="https://www.w3schools.com/css/css3_buttons.asp">w3School om CSS buttons</a> </li>
+        </ul>
+
+    </div>
+</div>
+</div>
+
+
+</div>
+
+</body>
+</html>

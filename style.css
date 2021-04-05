@@ -1,0 +1,134 @@
+body{
+
+    margin: 0%;
+    margin-top: 0%;
+    text-align: center;
+
+    background: linear-gradient(#233947, #446D64);
+
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+
+
+
+.header{
+    display: flex;
+    justify-content: center;
+
+    background-color: #233947;
+    height:75px;
+    margin: 0px;
+
+}
+
+
+.container{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+
+}
+
+
+.imagecontainer{
+    border: 1px solid black;
+
+
+
+
+    background-color: #233947;
+
+
+}
+
+.dokumentasjon{
+    display: flex;
+    background-color: white;
+    margin-left:80px;
+    margin-right: 80px;
+    flex-direction: column;
+    padding: 30px;
+
+}
+
+
+h1{
+    color: #95B56A;
+    text-decoration: underline;
+    font-size: 300%;
+}
+h4{
+    text-decoration: underline;
+    margin-bottom: 0%;
+    font-size: 130%;
+
+
+}
+p{
+    word-spacing: 3px;
+    line-height: 25px;
+    margin-top: 1%;
+    margin-bottom: 4%;
+
+}
+
+
+.menu{
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-self: left;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.tekst{
+    display: block;
+    text-align: left;
+
+}
+
+
+
+svg:hover #spaceship{
+    animation: moveSpaceship 7s;
+    animation-fill-mode: forwards;
+
+}
+ @keyframes moveSpaceship {
+     0%{
+         transform: translate(0px, 0px);
+     }
+     100%{
+         transform: translate(0px, -600px);
+     }
+
+ }
+
+ input{
+     background-color: #95B56A;
+     border: none;
+     color: white;
+     padding: 16px 32px;
+     text-decoration: none;
+     margin: 4px 10px;
+     cursor: pointer;
+ }
+
+
+
+
